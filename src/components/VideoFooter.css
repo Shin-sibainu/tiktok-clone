@@ -1,0 +1,26 @@
+.videoFooter {
+  position: relative;
+  color: white;
+  bottom: 150px;
+  margin-left: 40px;
+  display: flex;
+}
+
+.videoFooterText {
+  flex: 1;
+}
+
+.videoFooterText p {
+  margin-bottom: 5px;
+  padding: 0;
+}
+
+.videoFooterIcon {
+  position: absolute;
+  margin-top: 10px;
+}
+
+.videoFooterTicker .ticker {
+  font-size: 8px;
+  margin-left: 30px;
+}
