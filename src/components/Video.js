@@ -3,7 +3,15 @@ import "./Video.css";
 import VideoFooter from "./VideoFooter";
 import VideoSidebar from "./VideoSidebar";
 
-const Video = () => {
+const Video = ({
+  url,
+  channel,
+  description,
+  song,
+  favorite,
+  messages,
+  shares,
+}) => {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef(null);
 
@@ -21,17 +29,12 @@ const Video = () => {
 
   return (
     <div className="video">
-      <video
-        className="videoPlayer"
-        ref={videoRef}
-        src="https://v16-webapp.tiktok.com/aad786532c6225732725689b5490e06b/622cd5ac/video/tos/useast2a/tos-useast2a-ve-0068c003/02231ed20d2b4ae3bc3a23591164add3/?a=1988&br=1558&bt=779&cd=0%7C0%7C1%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&er=&ft=XOQ9-3opnz7TheV.vDXq&l=202203121117020102450452041D728C96&lr=tiktok_m&mime_type=video_mp4&net=0&pl=0&qs=0&rc=ajpvcTk6ZmhqOTMzNzczM0ApZTM2Njk5ZTtkNzNlOzMzOGdgNWBpcjQwbF9gLS1kMTZzczUuLjNhNjJjYy1hYmEzMzA6Yw%3D%3D&vl=&vr="
-        loop
-      ></video>
+      <video className="videoPlayer" ref={videoRef} src={url} loop></video>
 
       {/* videoFooter */}
-      <VideoFooter />
+      <VideoFooter channel={channel} description={description} song={song} />
       {/* videoSidebar */}
-      <VideoSidebar />
+      <VideoSidebar favorite={favorite} messages={messages} shares={shares} />
     </div>
   );
 };
